@@ -1,0 +1,45 @@
+<html>
+        <head>
+          <title>Student Data</title>
+          <style>
+            table {
+              border-collapse: collapse;
+              width: 100%;
+            }
+            th, td {
+              text-align: left;
+              padding: 8px;
+            }
+            th {
+              background-color: #f2f2f2;
+            }
+            tr:nth-child(even) {
+              background-color: #f2f2f2;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>Student Data</h1>
+          <table>
+            <tr>
+              <th>Student Name</th>
+              <th>ID</th>
+              <th>Age</th>
+              <th>CGPA</th>
+            </tr>
+            ${results
+              .map(
+                (row) => `
+              <tr>
+                <td>${row.StudentName}</td>
+                <td>${row.Id}</td>
+                <td>${row.Age}</td>
+                <td>${row.CGPA}</td>
+              </tr>
+            `
+              )
+              .join('')}
+          </table>
+        </body>
+        </html>
+     
